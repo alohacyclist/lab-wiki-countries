@@ -1,14 +1,15 @@
 import React from 'react'
-import { useParams, Link, Navigate } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 /* import countries from '../../countries.json' */
-import { Navbar } from '../'
 import axios from 'axios'
 
-export function CountriesDetails(props) {
-
+export function CountriesDetails() {
+    
     const { country_code } = useParams()
     const [countryDetails, setCountryDetails] = useState(null)
+
+    console.log(country_code)
 
 /*     useEffect(() => {
         const country = countries.find(oneCountry => oneCountry.alpha3Code === country_code)
@@ -24,9 +25,9 @@ export function CountriesDetails(props) {
 
     return (
         <div>
-            <Navbar />
-            <h1 className="headline" >Country Details</h1>
+   
             <div className="country_details_container">
+            <h1 className="headline" >Country Details</h1>
                 {!countryDetails && <h4>No country found!</h4>}
 
                 {countryDetails && (
@@ -38,7 +39,7 @@ export function CountriesDetails(props) {
                         <ul>
                             {countryDetails.borders.map(item => {
                             return(
-                            <Link to={`details/${item}`}>
+                            <Link to={`/countries/${item}`}>
                                 <li>{item}</li>
                             </Link>)
                             })}

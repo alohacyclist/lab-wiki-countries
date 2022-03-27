@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 /* import countries from '../../countries.json' */
 import { Link } from 'react-router-dom'
-import { Navbar } from '../'
+import { Navbar, CountriesDetails } from '../'
 import './CountriesList.css'
 import axios from 'axios'
 
@@ -20,27 +20,28 @@ export function CountriesList() {
   }, [])
 
   return (
-    <div>
+    <div className="column">
+      
       <Navbar />
-      <h1 className="headline">List of countries</h1>
+      
+      <div className="divider">
+        <div className="countries_list_container">
+        {countriesList.map(country => {
 
-      <div className="countries_list_container">
-      {countriesList.map(country => {
-
-      return (
-      <div className="country_container">
-        
-        <Link to={`details/${country.alpha3Code}`} props={country}>
-          <img src={"https://flagpedia.net/data/flags/icon/72x54/" + country.alpha2Code.toLowerCase() + ".png"} alt="flag-icon"/>
-          <p className="country_link">{country.name.common}</p>
-        </Link>
+        return (
+        <div className="country_container">
+          
+          <Link to={`${country.alpha3Code}`} props={country}>
+            <img src={"https://flagpedia.net/data/flags/icon/72x54/" + country.alpha2Code.toLowerCase() + ".png"} alt="flag-icon"/>
+            <p className="country_link">{country.name.common}</p>
+          </Link>
+        </div>
+        )
+        })}
+        </div>
+        <CountriesDetails />
       </div>
-      )
-
-      })}
-      </div>
-        
-
+      
     </div>
   )
 }

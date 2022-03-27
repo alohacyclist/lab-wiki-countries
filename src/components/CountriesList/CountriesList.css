@@ -3,11 +3,11 @@
 }
 
 .countries_list_container {
-    width: 95vw;
+    width: 65vw;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin: 1.5rem 4rem;
+    margin: 6rem 4rem;
 }
 
 .country_container {
@@ -31,12 +31,21 @@
 }
 
 .country_details_container {
-    margin: 2rem 3rem;
+    position: fixed;
+    margin: 7rem 1.5rem;
     padding: 1rem;
-    width: 400px;
+    width: 20vw;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     box-shadow: -2px -4px 4px rgba(0,0,0,0.12), 4px 4px 4px rgba(0,0,0,0.24);
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.divider {
+    display: flex;
+}
+.column {
+    display: flex;
+    flex-direction: column;
 }

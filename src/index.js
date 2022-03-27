@@ -9,11 +9,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 ReactDOM.render(
   <Router>
     <Routes>
-      <Route path='/countries' element={<CountriesList />} />
-      <Route path='/countries/details/:country_code' element={<CountriesDetails />} />
+      <Route path='/countries' element={<CountriesList />}/>
+      <Route path='/countries/:country_code' element={<CountriesDetails />} />
     </Routes>
-    <App />
-
   </Router>,
   document.getElementById('root')
 );
