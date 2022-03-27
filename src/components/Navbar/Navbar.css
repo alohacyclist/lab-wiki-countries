@@ -1,0 +1,29 @@
+.navbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+    background-color: #67D0DD;
+    height: 5rem;
+}
+
+.navbar_link {
+    font-size: 2em;
+    padding: 1.5em;
+    color: #F6E785;
+    text-shadow: 3px -2px 2px #A885EE;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* #DC95DD pastelpink
+#FAAFA5 pastelorange
+#F6E785 limegreen
+#A885EE lavender
+#F6E785 citronyellow
+#67D0DD lightblue */

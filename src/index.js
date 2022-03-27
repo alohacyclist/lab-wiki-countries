@@ -3,15 +3,19 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { CountriesList, CountriesDetails } from '../src/components'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Router>
+    <Routes>
+      <Route path='/countries' element={<CountriesList />} />
+      <Route path='/countries/details/:country_code' element={<CountriesDetails />} />
+    </Routes>
     <App />
-  </React.StrictMode>,
+
+  </Router>,
   document.getElementById('root')
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
